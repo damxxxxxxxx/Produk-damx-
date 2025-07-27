@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Produk by DAMX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produk Utama - DAMX</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0a0a0a;
-      color: #fff;
+      background: #0d0d0d;
+      color: #ffffff;
       padding: 20px;
     }
 
@@ -20,106 +20,137 @@
       margin-bottom: 30px;
     }
 
-    .product-list {
+    .product-container {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      max-width: 500px;
-      margin: auto;
+      gap: 25px;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .product {
-      background: #111;
-      padding: 20px;
+      background: #151515;
       border-radius: 15px;
-      box-shadow: 0 0 10px #00f0ff44;
+      box-shadow: 0 0 10px #00ffff50;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      box-shadow: 0 0 15px #00ffffaa;
     }
 
     .product-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
-      margin-bottom: 10px;
       color: #00ffff;
+      margin-bottom: 10px;
     }
 
-    .price {
+    .product-price {
+      font-size: 16px;
       color: #ccc;
       margin-bottom: 15px;
     }
 
     .btn-group {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     button {
-      padding: 10px 15px;
-      background-color: #00ffff;
+      flex: 1;
+      padding: 10px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-btn {
+      background: #00ffff;
       color: #000;
-      transition: 0.3s;
     }
 
-    button:hover {
-      background-color: #00cccc;
+    .add-btn:hover {
+      background: #00cccc;
     }
 
-    .cart-area {
+    .view-btn {
+      background: #222;
+      color: #fff;
+      border: 1px solid #00ffff;
+    }
+
+    .view-btn:hover {
+      background: #333;
+    }
+
+    .cart-box {
       margin-top: 40px;
       text-align: center;
     }
 
+    .cart-box button {
+      background: #00ffff;
+      color: #000;
+      font-size: 16px;
+    }
+
+    #cart-result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #eee;
+    }
+
     .footer {
-      margin-top: 50px;
+      margin-top: 60px;
       text-align: center;
       font-size: 14px;
-      color: #888;
+      color: #777;
     }
   </style>
 </head>
 <body>
 
-  <h1>🛒 PRODUK BY DAMX</h1>
+  <h1>🛍️ Produk Utama DAMX</h1>
 
-  <div class="product-list">
-
+  <div class="product-container">
+    
     <div class="product">
-      <div class="product-title">BUG WHATSAPP</div>
-      <div class="price">RM10</div>
+      <div class="product-title">SCRIPT BUG WHATSAPP</div>
+      <div class="product-price">Harga: RM10</div>
       <div class="btn-group">
-        <button onclick="addToCart('BUG WHATSAPP', 10)">Add to Cart</button>
-        <button onclick="location.href='bugwhatsapp.html'">Lihat</button>
+        <button class="add-btn" onclick="addToCart('SCRIPT BUG WHATSAPP', 10)">Add to Cart</button>
+        <button class="view-btn" onclick="location.href='bugwhatsapp.html'">Lihat</button>
       </div>
     </div>
 
     <div class="product">
       <div class="product-title">PANEL BY DAMX</div>
-      <div class="price">RM15</div>
+      <div class="product-price">Harga: RM15</div>
       <div class="btn-group">
-        <button onclick="addToCart('PANEL BY DAMX', 15)">Add to Cart</button>
-        <button onclick="location.href='panel.html'">Lihat</button>
+        <button class="add-btn" onclick="addToCart('PANEL BY DAMX', 15)">Add to Cart</button>
+        <button class="view-btn" onclick="location.href='panel.html'">Lihat</button>
       </div>
     </div>
 
     <div class="product">
       <div class="product-title">MURBAN 777</div>
-      <div class="price">RM12</div>
+      <div class="product-price">Harga: RM12</div>
       <div class="btn-group">
-        <button onclick="addToCart('MURBAN 777', 12)">Add to Cart</button>
-        <button onclick="location.href='murban.html'">Lihat</button>
+        <button class="add-btn" onclick="addToCart('MURBAN 777', 12)">Add to Cart</button>
+        <button class="view-btn" onclick="location.href='murban.html'">Lihat</button>
       </div>
     </div>
 
   </div>
 
-  <div class="cart-area">
-    <button onclick="checkCart()">🧾 Cek Cart & Jumlah Harga</button>
-    <div id="cart-result" style="margin-top: 15px; font-size: 16px;"></div>
+  <div class="cart-box">
+    <button onclick="checkCart()">🧾 Lihat Cart & Jumlah Harga</button>
+    <div id="cart-result"></div>
   </div>
 
   <div class="footer">From DAMX STORE</div>
@@ -129,25 +160,25 @@
 
     function addToCart(item, price) {
       cart.push({ item, price });
-      alert(`${item} telah ditambah ke dalam cart ✔️`);
+      alert(`${item} telah ditambah ke cart!`);
     }
 
     function checkCart() {
       if (cart.length === 0) {
-        document.getElementById('cart-result').innerHTML = "Cart kosong 😢";
+        document.getElementById("cart-result").innerHTML = "Cart kosong ❌";
         return;
       }
 
-      let result = "<strong>Isi Cart:</strong><br>";
+      let html = "<strong>🛒 Cart:</strong><br><ul>";
       let total = 0;
 
-      cart.forEach((c, i) => {
-        result += `• ${c.item} — RM${c.price}<br>`;
-        total += c.price;
+      cart.forEach(({ item, price }) => {
+        html += `<li>${item} — RM${price}</li>`;
+        total += price;
       });
 
-      result += `<br><strong>Jumlah:</strong> RM${total}`;
-      document.getElementById('cart-result').innerHTML = result;
+      html += `</ul><strong>Total:</strong> RM${total}`;
+      document.getElementById("cart-result").innerHTML = html;
     }
   </script>
 
