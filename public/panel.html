@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,109 +7,91 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
+      background: #0f0f0f;
       color: #fff;
-    }
+    }h1 {
+  text-align: center;
+  margin: 30px 0;
+  color: #00ffe5;
+}
 
-    @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
+}
 
-    h1 {
-      text-align: center;
-      margin: 30px 0;
-      color: #00ffe5;
-    }
+.panel {
+  background: #1a1a1a;
+  border: 1px solid #00ffe5;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 10px;
-    }
+.panel h3 {
+  margin: 0 0 10px;
+  color: #00d9ff;
+}
 
-    .panel {
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid #00ffe5;
-      border-radius: 15px;
-      padding: 15px;
-      margin-bottom: 15px;
-      box-shadow: 0 0 10px #00ffe5;
-    }
+.price-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #00ffe5;
+}
 
-    .panel h3 {
-      margin: 0 0 10px;
-      color: #00d9ff;
-    }
+button {
+  width: 100%;
+  padding: 10px;
+  background: #00ffe5;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-    .price-select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      background: #1a1a1a;
-      color: #fff;
-      border: 1px solid #00ffe5;
-    }
+.back-btn {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #222;
+  color: #00ffe5;
+  text-decoration: none;
+  border: 1px solid #00ffe5;
+}
 
-    button {
-      width: 100%;
-      padding: 10px;
-      background: #00ffe5;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .back-btn {
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
-      padding: 10px 20px;
-      border-radius: 10px;
-      background: #222;
-      color: #00ffe5;
-      text-decoration: none;
-      border: 1px solid #00ffe5;
-    }
   </style>
 </head>
-<body>
+<body>  <h1>PANEL BY DAMX</h1>
+  <div class="container"><div class="panel">
+  <h3>📦 HARGA PANEL DATA TERKINI (SEBULAN)</h3>
+  <select class="price-select" id="panelPrice">
+    <option value="0.50">1GB — RM 0.50</option>
+    <option value="1.00">5GB — RM 1.00</option>
+    <option value="1.50">7GB — RM 1.50</option>
+    <option value="1.60">8GB — RM 1.60</option>
+    <option value="1.80">9GB — RM 1.80</option>
+    <option value="2.00">10GB — RM 2.00</option>
+    <option value="2.50">UNLI — RM 2.50</option>
+    <option value="5.00">RESSELER PANEL — RM 5.00</option>
+    <option value="6.00">ADMIN PANEL — RM 6.00</option>
+  </select>
+  <button onclick="addToCart()">Add to Cart</button>
+</div>
 
-  <h1>PANEL BY DAMX</h1>
-  <div class="container">
+<a class="back-btn" href="index.html">⬅ Kembali</a>
 
-    <div class="panel">
-      <h3>📦 HARGA PANEL DATA TERKINI (SEBULAN)</h3>
-      <select class="price-select" id="panelPrice">
-        <option value="0.50">1GB — RM 0.50</option>
-        <option value="1.00">5GB — RM 1.00</option>
-        <option value="1.50">7GB — RM 1.50</option>
-        <option value="1.60">8GB — RM 1.60</option>
-        <option value="1.80">9GB — RM 1.80</option>
-        <option value="2.00">10GB — RM 2.00</option>
-        <option value="2.50">UNLI — RM 2.50</option>
-        <option value="5.00">RESSELER PANEL — RM 5.00</option>
-        <option value="6.00">ADMIN PANEL — RM 6.00</option>
-      </select>
-      <button onclick="addToCart()">Add to Cart</button>
-    </div>
-
-    <a class="back-btn" href="index.html">⬅ Kembali</a>
-  </div>
-
-  <script>
+  </div>  <script>
     function addToCart() {
       const price = document.getElementById("panelPrice").value;
       alert("Item dimasukkan ke dalam cart.\nHarga dipilih: RM " + price);
-      // Tambah logik cart jika ada sistem checkout nanti
     }
-  </script>
-
-</body>
+  </script></body>
 </html>
