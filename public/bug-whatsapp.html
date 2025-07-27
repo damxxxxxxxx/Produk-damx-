@@ -1,137 +1,106 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bug WhatsApp - DAMX STORE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUG WHATSAPP - DAMX STORE</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #f0f0f0;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 50px auto;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 20px;
-      background: #161b22;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
     }
-
-    h1 {
-      text-align: center;
-      color: #00ffe1;
+    h1, h2 {
+      color: #00ffd5;
     }
-
-    .product {
-      background-color: #21262d;
-      border-left: 5px solid #00ffe1;
-      margin-bottom: 15px;
+    .section {
+      margin-bottom: 30px;
+    }
+    .item {
+      background-color: #1a1a1a;
+      border: 1px solid #444;
       padding: 15px;
-      border-radius: 6px;
-    }
-
-    .product h3 {
-      margin: 0 0 10px;
-      color: #00ffe1;
-    }
-
-    .product p {
-      margin: 4px 0;
-    }
-
-    .add-to-cart {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #00ffe1;
-      color: #0d1117;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .add-to-cart:hover {
-      background-color: #00c2b2;
-    }
-
-    .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: #00ffe1;
-      color: #0d1117;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 0 10px #00ffe1;
-    }
-
-    .btn-container {
-      text-align: center;
-    }
-
-    .cart-counter {
-      float: right;
-      font-size: 14px;
-      background: #00ffe1;
-      color: #0d1117;
-      padding: 3px 8px;
       border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .item span {
+      display: block;
+      color: #00ff88;
+      margin-bottom: 5px;
+    }
+    .category-title {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #00ffd5;
+      padding-bottom: 5px;
+    }
+    a.button-back {
+      display: inline-block;
+      margin-top: 20px;
+      background: #00ffd5;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>📜 SCRIPT BUG WHATSAPP</h1>
-
-    <div class="product">
-      <h3>👑 AMBA CRASH</h3>
-      <p>ENC: RM7</p>
-      <p>NO ENC: RM10</p>
-      <p>RESELLER: RM15</p>
-      <button class="add-to-cart" onclick="addToCart('AMBA CRASH')">Add to Cart</button>
+  <h1>📜 LIST SCRIPT WHATSAPP VIA WA</h1>
+  <div class="section">
+    <div class="item">
+      <span>👑 AMBA CRASH</span>
+      <span>• ENC : RM7</span>
+      <span>• NO ENC : RM10</span>
+      <span>• RESSELER : RM15</span>
     </div>
-
-    <div class="product">
-      <h3>👺 PSYCHO CRASH</h3>
-      <p>NO ENC: RM10</p>
-      <p>RESELLER: RM15</p>
-      <button class="add-to-cart" onclick="addToCart('PSYCHO CRASH')">Add to Cart</button>
+    <div class="item">
+      <span>👺 PSYCHO CRASH</span>
+      <span>• NO ENC : RM10</span>
+      <span>• RESSELER : RM15</span>
     </div>
-
-    <div class="product">
-      <h3>⚡ NEXSUS</h3>
-      <p>NO UP: RM7</p>
-      <p>FULL UP: RM10</p>
-      <button class="add-to-cart" onclick="addToCart('NEXSUS')">Add to Cart</button>
+    <div class="item">
+      <span>⚡ NEXSUS</span>
+      <span>• NO UP : RM7</span>
+      <span>• FULL UP : RM10</span>
     </div>
-
-    <div class="product">
-      <h3>🌪️ VORTEX</h3>
-      <p>NO UP: RM5</p>
-      <p>FULL UP: RM10</p>
-      <button class="add-to-cart" onclick="addToCart('VORTEX')">Add to Cart</button>
+    <div class="item">
+      <span>🌪️ VORTEX</span>
+      <span>• NO UP : RM5</span>
+      <span>• FULL UP : RM10</span>
     </div>
-
-    <div class="btn-container">
-      <a href="produk.html" class="back-btn">⬅ Kembali ke Produk</a>
+  </div>  <h1>📜 LIST SCRIPT WHATSAPP VIA TELEGRAM</h1>
+  <div class="section">
+    <div class="item">
+      <span>🀄 MAHJONG</span>
+      <span>• NO UP : RM10</span>
+      <span>• UPDATE 3X : RM14</span>
+      <span>• PERMANENT : RM20</span>
     </div>
-  </div>
+    <div class="item">
+      <span>🍥 CIKIWIR</span>
+      <span>• NO UP : RM7</span>
+      <span>• FULL UP : RM12</span>
+    </div>
+    <div class="item">
+      <span>💠 TREDICT</span>
+      <span>• FULL UP : RM30</span>
+      <span>• RESSELER : RM40</span>
+    </div>
+    <div class="item">
+      <span>⚡ ZEUS</span>
+      <span>• NO UP : RM11</span>
+      <span>• UPDATE 3X : RM15</span>
+      <span>• PERMANENT : RM25</span>
+    </div>
+    <div class="item">
+      <span>🐉 DRAGON</span>
+      <span>• NO UP : RM4</span>
+      <span>• UPDATE 5X : RM6</span>
+      <span>• UPDATE 7X : RM7</span>
+      <span>• PERMANENT : RM10</span>
+      <span>• RESSELER : RM15</span>
+    </div>
+  </div><a class="button-back" href="index.html">⬅ Kembali ke Halaman Utama</a>
 
-  <script>
-    function addToCart(item) {
-      alert("✅ " + item + " telah dimasukkan ke dalam cart!");
-      // Simpan ke localStorage (boleh digunakan di halaman checkout)
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push(item);
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
-  </script>
 </body>
 </html>
