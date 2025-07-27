@@ -126,14 +126,16 @@
         return;
       }
 
-      cart.forEach((item, index) => {
-        total += parseFloat(item.price);
+      cart.forEach((itemObj, index) => {
+        const price = parseFloat(itemObj.price);
+        total += price;
+
         const div = document.createElement("div");
         div.className = "item";
         div.innerHTML = `
           <div class="item-info">
-            <div>🛍️ <span>${item.name}</span></div>
-            <div>💰 Harga: <span>RM${item.price}</span></div>
+            <div>🛍️ <span>${itemObj.item}</span></div>
+            <div>💰 Harga: <span>RM${itemObj.price}</span></div>
           </div>
           <button class="remove-btn" onclick="removeItem(${index})">❌</button>
         `;
@@ -150,7 +152,6 @@
       loadCart();
     }
 
-    // Load cart on page load
     loadCart();
   </script>
 
