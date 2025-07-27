@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cek Cart</title>
+</head>
+<body>
+  <h2>Senarai Cart</h2>
+  <ul id="cart-list"></ul>
+  <p><strong>Total Harga: RM <span id="total-price">0</span></strong></p>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+    cart.forEach(({ item, price }) => {
+      const li = document.createElement('li');
+      li.textContent = `${item} - RM${price}`;
+      document.getElementById('cart-list').appendChild(li);
+      total += price;
+    });
+    document.getElementById('total-price').textContent = total;
+  </script>
+</body>
+</html>
