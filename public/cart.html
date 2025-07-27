@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cek Cart</title>
+  <title>Cart - DAMX Store</title>
 </head>
 <body>
   <h2>Senarai Cart</h2>
@@ -11,13 +11,18 @@
   <script>
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let total = 0;
-    cart.forEach(({ item, price }) => {
-      const li = document.createElement('li');
-      li.textContent = `${item} - RM${price}`;
-      document.getElementById('cart-list').appendChild(li);
-      total += price;
+
+    const cartList = document.getElementById("cart-list");
+    const totalPriceEl = document.getElementById("total-price");
+
+    cart.forEach(function(itemObj) {
+      const li = document.createElement("li");
+      li.textContent = `${itemObj.item} - RM${itemObj.price}`;
+      cartList.appendChild(li);
+      total += parseFloat(itemObj.price);
     });
-    document.getElementById('total-price').textContent = total;
+
+    totalPriceEl.textContent = total.toFixed(2);
   </script>
 </body>
 </html>
