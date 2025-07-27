@@ -77,7 +77,7 @@
     }
     .btn {
       display: block;
-      margin: 30px auto 0;
+      margin: 20px auto 0;
       background-color: #00ffff;
       color: #000;
       padding: 12px 25px;
@@ -108,6 +108,10 @@
 
   <div class="total">💰 Total Harga: RM <span id="totalHarga">0.00</span></div>
 
+  <!-- Butang ke halaman pembayaran -->
+  <button class="btn" onclick="goToPayment()">🧾 Terus ke Pembayaran</button>
+
+  <!-- Butang kembali ke home -->
   <button class="btn" onclick="window.location.href='index.html'">Kembali ke Home</button>
 
   <div class="footer">From DAMX STORE</div>
@@ -152,16 +156,15 @@
       loadCart();
     }
 
-    loadCart();
- <button onclick="goToPayment()">🧾 Terus ke Pembayaran</button>
+    // Fungsi ke halaman payment
+    function goToPayment() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      localStorage.setItem("paymentCart", JSON.stringify(cart));
+      window.location.href = "https://payment-damxstore.vercel.app";
+    }
 
-<script>
-function goToPayment() {
-  const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-  localStorage.setItem("paymentCart", JSON.stringify(cart));
-  window.location.href = "https://payment-damxstore.vercel.app";
-}
-</script>
+    loadCart();
+  </script>
 
 </body>
 </html>
