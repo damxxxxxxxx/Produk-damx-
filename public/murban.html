@@ -91,9 +91,8 @@
     function addToCart() {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
       const item = {
-        name: "MURBAN 777",
-        price: "RM10",
-        source: "murban.html"
+        item: "MURBAN 777",
+        price: 10
       };
       cart.push(item);
       localStorage.setItem("cart", JSON.stringify(cart));
