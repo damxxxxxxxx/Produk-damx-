@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MURBAN 777 - DAMX STORE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #161b22;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff00ff;
+    }
+
+    .product {
+      background-color: #21262d;
+      border-left: 5px solid #ff00ff;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .product h2 {
+      margin-top: 0;
+      color: #ff00ff;
+    }
+
+    .product p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .add-to-cart {
+      margin-top: 15px;
+      padding: 12px 24px;
+      background-color: #ff00ff;
+      color: #0d1117;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background-color: #d100d1;
+    }
+
+    .back-btn {
+      display: block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #ff00ff;
+      color: #0d1117;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="product">
+      <h2>𖤐 MURBAN 777 | INPOSIBLE'S 𖤐</h2>
+      <p>💸 <strong>Harga:</strong> RM10 — Permanent Access</p>
+      <p><strong>✦ 𝐏𝐀𝐊𝐄𝐓 𝐈𝐍𝐂𝐋𝐔𝐃𝐄𝐒 ✦</strong></p>
+      <ul>
+        <li>⚙️ APK Cek Ban</li>
+        <li>💣 APK Force Close</li>
+        <li>🧪 MT Fresh</li>
+        <li>🚀 MT Gacor</li>
+        <li>🔨 Kang Ban</li>
+        <li>💀 BAN Semua Orang Yang Lu Benci</li>
+        <li>📚 Full Tutorial (Ajar Sampai Faham)</li>
+      </ul>
+      <button class="add-to-cart" onclick="addToCart('MURBAN 777 - RM10')">Add to Cart</button>
+    </div>
+
+    <a href="produk.html" class="back-btn">⬅ Kembali ke Produk</a>
+  </div>
+
+  <script>
+    function addToCart(item) {
+      alert("✅ " + item + " telah dimasukkan ke dalam cart!");
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(item);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  </script>
+</body>
+</html>
