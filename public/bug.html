@@ -1,160 +1,147 @@
-<!DOCTYPE html><html lang="id"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Script Bug WhatsApp</title>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Script Bug WhatsApp - DAMX STORE</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      color: #fff;
-    }header {
-  background-color: #111;
-  padding: 20px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  border-bottom: 2px solid #222;
-}
-
-.container {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.item {
-  background: #1e1e1e;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.item h3 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-.item p {
-  margin: 4px 0;
-}
-
-select, button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  background-color: #00b894;
-  color: white;
-  cursor: pointer;
-}
-
-button.back {
-  background: #636e72;
-  margin-top: 30px;
-}
-
+      color: white;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #181818;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,255,255,0.3);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00ffff;
+    }
+    .product {
+      background: #111;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .product-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .button {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      padding: 10px 15px;
+      background: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+    .button:hover {
+      background: #00cccc;
+    }
+    .nav-button {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
-</head><body>
-  <header>SCRIPT BUG WHATSAPP</header>
-  <div class="container"><div class="item">
-  <h3>👑 AMBA CRASH</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>ENC : RM7</option>
-    <option>NO ENC : RM10</option>
-    <option>RESSELER : RM15</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+</head>
+<body>
+  <div class="container">
+    <h1>📜 LIST SCRIPT WHATSAPP VIA WA</h1>
 
-<div class="item">
-  <h3>👺 PSYCHO CRASH</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>NO ENC : RM10</option>
-    <option>RESSELER : RM15</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <div class="product">
+      <div class="product-name">👑 AMBA CRASH</div>
+      <button class="button" onclick="addToCart('AMBA CRASH - ENC', 7)">ENC - RM7</button>
+      <button class="button" onclick="addToCart('AMBA CRASH - NO ENC', 10)">NO ENC - RM10</button>
+      <button class="button" onclick="addToCart('AMBA CRASH - RESELLER', 15)">RESSELER - RM15</button>
+    </div>
 
-<div class="item">
-  <h3>⚡ NEXSUS</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>NO UP : RM7</option>
-    <option>FULL UP : RM10</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <div class="product">
+      <div class="product-name">👺 PSYCHO CRASH</div>
+      <button class="button" onclick="addToCart('PSYCHO CRASH - NO ENC', 10)">NO ENC - RM10</button>
+      <button class="button" onclick="addToCart('PSYCHO CRASH - RESELLER', 15)">RESSELER - RM15</button>
+    </div>
 
-<div class="item">
-  <h3>🌪️ VORTEX</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>NO UP : RM5</option>
-    <option>FULL UP : RM10</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <div class="product">
+      <div class="product-name">⚡ NEXSUS</div>
+      <button class="button" onclick="addToCart('NEXSUS - NO UP', 7)">NO UP - RM7</button>
+      <button class="button" onclick="addToCart('NEXSUS - FULL UP', 10)">FULL UP - RM10</button>
+    </div>
 
-<div class="item">
-  <h3>🀄 MAHJONG</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>NO UP : RM10</option>
-    <option>UPDATE 3X : RM14</option>
-    <option>PERMANENT : RM20</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <div class="product">
+      <div class="product-name">🌪️ VORTEX</div>
+      <button class="button" onclick="addToCart('VORTEX - NO UP', 5)">NO UP - RM5</button>
+      <button class="button" onclick="addToCart('VORTEX - FULL UP', 10)">FULL UP - RM10</button>
+    </div>
 
-<div class="item">
-  <h3>🍥 CIKIWIR</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>NO UP : RM7</option>
-    <option>FULL UP : RM12</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <h2>📜 LIST SCRIPT WHATSAPP VIA TELEGRAM</h2>
 
-<div class="item">
-  <h3>💠 TREDICT</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>FULL UP : RM30</option>
-    <option>RESSELER : RM40</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <div class="product">
+      <div class="product-name">🀄 MAHJONG</div>
+      <button class="button" onclick="addToCart('MAHJONG - NO UP', 10)">NO UP - RM10</button>
+      <button class="button" onclick="addToCart('MAHJONG - UPDATE 3X', 14)">UPDATE 3X - RM14</button>
+      <button class="button" onclick="addToCart('MAHJONG - PERMANENT', 20)">PERMANENT - RM20</button>
+    </div>
 
-<div class="item">
-  <h3>⚡ ZEUS</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>NO UP : RM11</option>
-    <option>UPDATE 3X : RM15</option>
-    <option>PERMANENT : RM25</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <div class="product">
+      <div class="product-name">🍥 CIKIWIR</div>
+      <button class="button" onclick="addToCart('CIKIWIR - NO UP', 7)">NO UP - RM7</button>
+      <button class="button" onclick="addToCart('CIKIWIR - FULL UP', 12)">FULL UP - RM12</button>
+    </div>
 
-<div class="item">
-  <h3>🐉 DRAGON</h3>
-  <select>
-    <option disabled selected>Pilih Harga</option>
-    <option>NO UP : RM4</option>
-    <option>UPDATE 5X : RM6</option>
-    <option>UPDATE 7X : RM7</option>
-    <option>PERMANENT : RM10</option>
-    <option>RESSELER : RM15</option>
-  </select>
-  <button onclick="alert('Ditambah ke cart!')">Add to Cart</button>
-</div>
+    <div class="product">
+      <div class="product-name">💠 TREDICT</div>
+      <button class="button" onclick="addToCart('TREDICT - FULL UP', 30)">FULL UP - RM30</button>
+      <button class="button" onclick="addToCart('TREDICT - RESELLER', 40)">RESELLER - RM40</button>
+    </div>
 
-<button class="back" onclick="window.location.href='index.html'">⬅ Kembali</button>
+    <div class="product">
+      <div class="product-name">⚡ ZEUS</div>
+      <button class="button" onclick="addToCart('ZEUS - NO UP', 11)">NO UP - RM11</button>
+      <button class="button" onclick="addToCart('ZEUS - UPDATE 3X', 15)">UPDATE 3X - RM15</button>
+      <button class="button" onclick="addToCart('ZEUS - PERMANENT', 25)">PERMANENT - RM25</button>
+    </div>
 
+    <div class="product">
+      <div class="product-name">🐉 DRAGON</div>
+      <button class="button" onclick="addToCart('DRAGON - NO UP', 4)">NO UP - RM4</button>
+      <button class="button" onclick="addToCart('DRAGON - UPDATE 5X', 6)">UPDATE 5X - RM6</button>
+      <button class="button" onclick="addToCart('DRAGON - UPDATE 7X', 7)">UPDATE 7X - RM7</button>
+      <button class="button" onclick="addToCart('DRAGON - PERMANENT', 10)">PERMANENT - RM10</button>
+      <button class="button" onclick="addToCart('DRAGON - RESELLER', 15)">RESELLER - RM15</button>
+    </div>
+
+    <a class="nav-button" href="cart.html">🧾 Lihat Cart</a>
+    <a class="nav-button" href="index.html">🔙 Kembali ke Halaman Utama</a>
   </div>
-</body></html>
+
+  <script>
+    function addToCart(nama, harga) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ nama, harga });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(nama + " berjaya ditambah ke cart!");
+    }
+  </script>
+</body>
+</html>
