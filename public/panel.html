@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Data - DAMX STORE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #161b22;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffe1;
+    }
+
+    .product {
+      background-color: #21262d;
+      border-left: 5px solid #00ffe1;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .product h3 {
+      margin: 0 0 10px;
+      color: #00ffe1;
+    }
+
+    .product p {
+      margin: 4px 0;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #00ffe1;
+      color: #0d1117;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background-color: #00c2b2;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #00ffe1;
+      color: #0d1117;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px #00ffe1;
+    }
+
+    .btn-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📦 PANEL DATA (Sebulan)</h1>
+
+    <div class="product"><h3>📶 1GB</h3><p>RM 0.50</p><button class="add-to-cart" onclick="addToCart('Panel 1GB - RM0.50')">Add to Cart</button></div>
+    <div class="product"><h3>📶 5GB</h3><p>RM 1.00</p><button class="add-to-cart" onclick="addToCart('Panel 5GB - RM1.00')">Add to Cart</button></div>
+    <div class="product"><h3>📶 7GB</h3><p>RM 1.50</p><button class="add-to-cart" onclick="addToCart('Panel 7GB - RM1.50')">Add to Cart</button></div>
+    <div class="product"><h3>📶 8GB</h3><p>RM 1.60</p><button class="add-to-cart" onclick="addToCart('Panel 8GB - RM1.60')">Add to Cart</button></div>
+    <div class="product"><h3>📶 9GB</h3><p>RM 1.80</p><button class="add-to-cart" onclick="addToCart('Panel 9GB - RM1.80')">Add to Cart</button></div>
+    <div class="product"><h3>📶 10GB</h3><p>RM 2.00</p><button class="add-to-cart" onclick="addToCart('Panel 10GB - RM2.00')">Add to Cart</button></div>
+    <div class="product"><h3>🚀 UNLI</h3><p>RM 2.50</p><button class="add-to-cart" onclick="addToCart('Panel UNLI - RM2.50')">Add to Cart</button></div>
+
+    <div class="product"><h3>👤 RESSELER PANEL</h3><p>RM 5.00</p><button class="add-to-cart" onclick="addToCart('RESSELER PANEL - RM5.00')">Add to Cart</button></div>
+    <div class="product"><h3>🛡️ ADMIN PANEL</h3><p>RM 6.00</p><button class="add-to-cart" onclick="addToCart('ADMIN PANEL - RM6.00')">Add to Cart</button></div>
+
+    <div class="btn-container">
+      <a href="produk.html" class="back-btn">⬅ Kembali ke Produk</a>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(item) {
+      alert("✅ " + item + " telah dimasukkan ke dalam cart!");
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(item);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  </script>
+</body>
+</html>
