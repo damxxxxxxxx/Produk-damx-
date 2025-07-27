@@ -89,12 +89,18 @@
 
   <script>
     function addToCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const item = {
+        name: "MURBAN 777",
+        price: "RM10",
+        source: "murban.html"
+      };
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
       alert("MURBAN 777 telah dimasukkan ke dalam cart ✔️");
-      // Anda boleh sambung fungsi ni ke localStorage atau backend jika perlu
     }
 
     function goBack() {
-      // Kembali ke halaman sebelum ini atau index.html
       if (document.referrer) {
         window.history.back();
       } else {
