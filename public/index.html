@@ -6,54 +6,42 @@
   <title>Produk by DAMX STORE</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      color: #fff;
       background: linear-gradient(120deg, #0d0d2b, #1a1a40, #0f0f2d);
       background-size: 600% 600%;
       animation: galaxy 20s ease infinite;
       min-height: 100vh;
       padding: 20px;
+      color: #fff;
     }
-
     @keyframes galaxy {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
     header {
       text-align: center;
       margin-bottom: 30px;
     }
-
     header img {
       width: 100px;
       border-radius: 50%;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
-
     h1 {
       margin-top: 15px;
       font-size: 28px;
       color: #fff;
       text-shadow: 0 0 10px #00ffff;
     }
-
     .product-buttons {
       display: flex;
       flex-direction: column;
       gap: 15px;
       align-items: center;
     }
-
     .product-buttons button {
       background-color: #111133;
       border: 1px solid #00ffff;
@@ -67,13 +55,11 @@
       max-width: 400px;
       box-shadow: 0 0 10px #00ffff88;
     }
-
     .product-buttons button:hover {
       background-color: #00ffff;
       color: #111133;
       box-shadow: 0 0 20px #00ffffaa;
     }
-
     .cart-button {
       position: fixed;
       bottom: 20px;
@@ -87,7 +73,6 @@
       box-shadow: 0 0 15px #00ffffaa;
       cursor: pointer;
     }
-
     .cart-button:hover {
       background: #00dada;
     }
@@ -101,51 +86,50 @@
   </header>
 
   <section class="product-buttons">
-    <button onclick="window.location.href='bug.html'">SCRIPT BUG WHATSAPP</button>
-    <button onclick="window.location.href='panel.html'">PANEL BY DAMX</button>
-    <button onclick="window.location.href='murban.html'">MURBAN 777</button>
+    <button onclick="addToCartAndRedirect('SCRIPT BUG WHATSAPP', 15, 'bug.html')">SCRIPT BUG WHATSAPP</button>
+    <button onclick="addToCartAndRedirect('PANEL BY DAMX', 20, 'panel.html')">PANEL BY DAMX</button>
+    <button onclick="addToCartAndRedirect('MURBAN 777', 30, 'murban.html')">MURBAN 777</button>
   </section>
 
-<script>
+  <!-- CART BUTTON -->
+  <button class="cart-button" onclick="openCart()">🛒 Cek Cart</button>
+
   <!-- CART MODAL -->
-<div id="cartModal" style="display:none;position:fixed;top:15%;left:50%;transform:translateX(-50%);background:#000;color:#fff;padding:20px;border-radius:10px;z-index:999;box-shadow:0 0 15px #00ffe1;">
-  <h3>Cart Anda</h3>
-  <ul id="cartList" style="list-style:none;padding:0;"></ul>
-  <p>Total: RM <span id="totalPrice">0</span></p>
-  <button onclick="closeCart()" style="padding:10px 15px;background:#00ffe1;color:#000;border:none;border-radius:8px;cursor:pointer;">Tutup</button>
-</div>
+  <div id="cartModal" style="display:none;position:fixed;top:15%;left:50%;transform:translateX(-50%);background:#000;color:#fff;padding:20px;border-radius:10px;z-index:999;box-shadow:0 0 15px #00ffe1;">
+    <h3 style="margin-bottom:10px;">Cart Anda</h3>
+    <ul id="cartList" style="list-style:none;padding:0;margin-bottom:10px;"></ul>
+    <p>Total: RM <span id="totalPrice">0</span></p>
+    <button onclick="closeCart()" style="margin-top:10px;padding:8px 15px;background:#00ffe1;color:#000;border:none;border-radius:8px;cursor:pointer;">Tutup</button>
+  </div>
 
-<!-- CEK CART BUTTON -->
-<button onclick="openCart()" style="margin-top:20px;padding:10px 20px;background:#00ffe1;color:#000;border:none;border-radius:10px;font-weight:bold;box-shadow:0 0 10px #00ffe1;cursor:pointer;">🛒 Cek Cart</button>
+  <script>
+    let cart = [];
 
-<script>
-  let cart = [];
+    function addToCartAndRedirect(product, price, link) {
+      cart.push({ product, price });
+      alert(product + ' ditambah ke cart!');
+      window.location.href = link;
+    }
 
-  // Contoh add item (letak kat button produk)
-  // addToCart('SCRIPT BUG WHATSAPP', 10);
-  function addToCart(product, price) {
-    cart.push({ product, price });
-    alert(product + ' ditambah ke cart!');
-  }
+    function openCart() {
+      const list = document.getElementById('cartList');
+      const total = document.getElementById('totalPrice');
+      list.innerHTML = '';
+      let sum = 0;
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.product} - RM${item.price}`;
+        list.appendChild(li);
+        sum += item.price;
+      });
+      total.textContent = sum;
+      document.getElementById('cartModal').style.display = 'block';
+    }
 
-  function openCart() {
-    const list = document.getElementById('cartList');
-    const total = document.getElementById('totalPrice');
-    list.innerHTML = '';
-    let sum = 0;
-    cart.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = `${item.product} - RM${item.price}`;
-      list.appendChild(li);
-      sum += item.price;
-    });
-    total.textContent = sum;
-    document.getElementById('cartModal').style.display = 'block';
-  }
+    function closeCart() {
+      document.getElementById('cartModal').style.display = 'none';
+    }
+  </script>
 
-  function closeCart() {
-    document.getElementById('cartModal').style.display = 'none';
-  }
-</script>
 </body>
 </html>
