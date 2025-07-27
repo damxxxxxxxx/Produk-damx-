@@ -109,42 +109,57 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Tombol lagu */
-    .music-button {
+    /* Tombol Musik */
+    .music-btn {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
+      top: 15px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      background-color: #00ffff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #000;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px #00ffff80;
+      z-index: 100;
     }
 
-    .music-button button {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #00ffff;
-      color: black;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #00ffffaa;
+    .music-btn:hover {
+      background-color: #00cccc;
     }
   </style>
 </head>
 <body>
 
-  <!-- VIDEO BACKGROUND -->
+  <!-- BACKGROUND VIDEO -->
   <video autoplay loop muted playsinline id="bgVideo">
     <source src="https://files.catbox.moe/4spq8s.mp4" type="video/mp4">
   </video>
 
-  <!-- TOMBOL MUSIK -->
-  <div class="music-button">
-    <button onclick="toggleMusic()">🎵</button>
-  </div>
+  <!-- TOMBOL LAGU -->
+  <button class="music-btn" onclick="toggleMusic()">🎵</button>
+  <audio id="song1" src="https://files.catbox.moe/h6vuqi.mp4"></audio>
+  <audio id="song2" src="https://files.catbox.moe/5pqy89.mp4"></audio>
 
-  <!-- AUDIO -->
-  <audio id="music1" src="https://files.catbox.moe/h6vuqi.mp4" loop></audio>
-  <audio id="music2" src="https://files.catbox.moe/5pqy89.mp4" loop></audio>
+  <script>
+    let playingIndex = 0;
+    const songs = [document.getElementById('song1'), document.getElementById('song2')];
+
+    function toggleMusic() {
+      // Stop semua dulu
+      songs.forEach(s => s.pause());
+
+      // Mainkan lagu berikutnya
+      playingIndex = (playingIndex + 1) % songs.length;
+      songs[playingIndex].currentTime = 0;
+      songs[playingIndex].play();
+    }
+  </script>
 
   <div class="center-container">
     <img src="https://files.catbox.moe/b5pfw2.jpg" alt="Logo DAMX STORE">
@@ -163,25 +178,6 @@
   <div class="marquee">
     💠 Selamat datang ke DAMX STORE selamat berbelanja 🙂‍↕️ 💠
   </div>
-
-  <!-- SCRIPT LAGU -->
-  <script>
-    let isPlaying = false;
-    function toggleMusic() {
-      const music1 = document.getElementById("music1");
-      const music2 = document.getElementById("music2");
-
-      if (!isPlaying) {
-        music1.play();
-        music2.play();
-        isPlaying = true;
-      } else {
-        music1.pause();
-        music2.pause();
-        isPlaying = false;
-      }
-    }
-  </script>
 
 </body>
 </html>
