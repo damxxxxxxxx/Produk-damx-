@@ -3,230 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bug WhatsApp - DAMX STORE</title>
+  <title>BUG WHATSAPP | DAMX STORE</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: "Arial", sans-serif;
-      background: linear-gradient(120deg, #0f0f0f, #1a1a1a);
-      color: white;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+      color: #fff;
       padding: 20px;
     }
 
     h1 {
       text-align: center;
-      color: #00ffcc;
-      margin-bottom: 30px;
+      color: #00f0ff;
     }
 
-    .product {
-      background-color: #222;
-      border: 1px solid #444;
+    .card {
+      background-color: #111;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 0 15px #00f0ff33;
+    }
+
+    .item {
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #222;
       border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px #00ffcc55;
     }
 
-    .product h2 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: #00ffcc;
+    .item-title {
+      font-weight: bold;
+      margin-bottom: 5px;
     }
 
-    .price-options {
-      margin-bottom: 10px;
+    select, button {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 5px;
+      font-weight: bold;
     }
 
     select {
-      padding: 8px;
-      border-radius: 5px;
-      border: none;
-      background: #111;
-      color: white;
+      width: 70%;
     }
 
     button {
-      padding: 10px 15px;
-      background-color: #00ffcc;
-      border: none;
-      border-radius: 8px;
+      background: #00f0ff;
+      color: #000;
       cursor: pointer;
-      color: black;
-      font-weight: bold;
-      transition: background 0.3s;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #00c2a8;
+      background: #00cce0;
     }
 
-    .credit {
+    .footer {
       text-align: center;
-      margin-top: 40px;
-      color: #888;
+      margin-top: 30px;
       font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>📜 SCRIPT BUG WHATSAPP</h1>
 
-    <!-- WA Scripts -->
-    <div class="product">
-      <h2>👑 AMBA CRASH</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>ENC - RM7</option>
-          <option>NO ENC - RM10</option>
-          <option>RESSELER - RM15</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+  <h1>📜 BUG WHATSAPP | DAMX STORE</h1>
+
+  <div class="card">
+    <h3>Script WhatsApp via WA</h3>
+
+    <div class="item">
+      <div class="item-title">👑 AMBA CRASH</div>
+      <select id="price-amba">
+        <option value="7">ENC - RM7</option>
+        <option value="10">NO ENC - RM10</option>
+        <option value="15">RESSELER - RM15</option>
+      </select>
+      <button onclick="addToCart('AMBA CRASH', 'price-amba')">Add to Cart</button>
     </div>
 
-    <div class="product">
-      <h2>👺 PSYCHO CRASH</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>NO ENC - RM10</option>
-          <option>RESSELER - RM15</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <div class="item">
+      <div class="item-title">👺 PSYCHO CRASH</div>
+      <select id="price-psycho">
+        <option value="10">NO ENC - RM10</option>
+        <option value="15">RESSELER - RM15</option>
+      </select>
+      <button onclick="addToCart('PSYCHO CRASH', 'price-psycho')">Add to Cart</button>
     </div>
 
-    <div class="product">
-      <h2>⚡ NEXSUS</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>NO UP - RM7</option>
-          <option>FULL UP - RM10</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <div class="item">
+      <div class="item-title">⚡ NEXSUS</div>
+      <select id="price-nexsus">
+        <option value="7">NO UP - RM7</option>
+        <option value="10">FULL UP - RM10</option>
+      </select>
+      <button onclick="addToCart('NEXSUS', 'price-nexsus')">Add to Cart</button>
     </div>
 
-    <div class="product">
-      <h2>🌪️ VORTEX</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>NO UP - RM5</option>
-          <option>FULL UP - RM10</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <div class="item">
+      <div class="item-title">🌪️ VORTEX</div>
+      <select id="price-vortex">
+        <option value="5">NO UP - RM5</option>
+        <option value="10">FULL UP - RM10</option>
+      </select>
+      <button onclick="addToCart('VORTEX', 'price-vortex')">Add to Cart</button>
     </div>
 
-    <!-- TELEGRAM Scripts -->
-    <div class="product">
-      <h2>🀄 MAHJONG</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>NO UP - RM10</option>
-          <option>UPDATE 3X - RM14</option>
-          <option>PERMANENT - RM20</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <hr style="border-color: #333; margin: 30px 0;">
+
+    <h3>Script WhatsApp via TELEGRAM</h3>
+
+    <div class="item">
+      <div class="item-title">🀄 MAHJONG</div>
+      <select id="price-mahjong">
+        <option value="10">NO UP - RM10</option>
+        <option value="14">UPDATE 3X - RM14</option>
+        <option value="20">PERMANENT - RM20</option>
+      </select>
+      <button onclick="addToCart('MAHJONG', 'price-mahjong')">Add to Cart</button>
     </div>
 
-    <div class="product">
-      <h2>🍥 CIKIWIR</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>NO UP - RM7</option>
-          <option>FULL UP - RM12</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <div class="item">
+      <div class="item-title">🍥 CIKIWIR</div>
+      <select id="price-cikiwir">
+        <option value="7">NO UP - RM7</option>
+        <option value="12">FULL UP - RM12</option>
+      </select>
+      <button onclick="addToCart('CIKIWIR', 'price-cikiwir')">Add to Cart</button>
     </div>
 
-    <div class="product">
-      <h2>💠 TREDICT</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>FULL UP - RM30</option>
-          <option>RESSELER - RM40</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <div class="item">
+      <div class="item-title">💠 TREDICT</div>
+      <select id="price-tredict">
+        <option value="30">FULL UP - RM30</option>
+        <option value="40">RESSELER - RM40</option>
+      </select>
+      <button onclick="addToCart('TREDICT', 'price-tredict')">Add to Cart</button>
     </div>
 
-    <div class="product">
-      <h2>⚡ ZEUS</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>NO UP - RM11</option>
-          <option>UPDATE 3X - RM15</option>
-          <option>PERMANENT - RM25</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <div class="item">
+      <div class="item-title">⚡ ZEUS</div>
+      <select id="price-zeus">
+        <option value="11">NO UP - RM11</option>
+        <option value="15">UPDATE 3X - RM15</option>
+        <option value="25">PERMANENT - RM25</option>
+      </select>
+      <button onclick="addToCart('ZEUS', 'price-zeus')">Add to Cart</button>
     </div>
 
-    <div class="product">
-      <h2>🐉 DRAGON</h2>
-      <div class="price-options">
-        <select>
-          <option disabled selected>Pilih harga</option>
-          <option>NO UP - RM4</option>
-          <option>UPDATE 5X - RM6</option>
-          <option>UPDATE 7X - RM7</option>
-          <option>PERMANENT - RM10</option>
-          <option>RESSELER - RM15</option>
-        </select>
-      </div>
-      <button>Add to Cart</button>
+    <div class="item">
+      <div class="item-title">🐉 DRAGON</div>
+      <select id="price-dragon">
+        <option value="4">NO UP - RM4</option>
+        <option value="6">UPDATE 5X - RM6</option>
+        <option value="7">UPDATE 7X - RM7</option>
+        <option value="10">PERMANENT - RM10</option>
+        <option value="15">RESSELER - RM15</option>
+      </select>
+      <button onclick="addToCart('DRAGON', 'price-dragon')">Add to Cart</button>
     </div>
 
-    <div class="credit">From DAMX STORE</div>
   </div>
 
+  <div class="footer">From DAMX STORE</div>
+
   <script>
-    const buttons = document.querySelectorAll("button");
-    buttons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const product = button.closest(".product");
-        const item = product.querySelector("h2").innerText;
-        const select = product.querySelector("select");
-        const selected = select.options[select.selectedIndex];
-
-        if (select.selectedIndex === 0) {
-          alert("Sila pilih harga dahulu.");
-          return;
-        }
-
-        const valueText = selected.textContent;
-        const price = valueText.split("RM")[1];
-
-        const cartItem = {
-          item: item + " - " + valueText.split(" - ")[0],
-          price: price
-        };
-
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.push(cartItem);
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        alert("Item berjaya dimasukkan ke dalam cart!");
+    function addToCart(itemName, selectId) {
+      const price = document.getElementById(selectId).value;
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({
+        item: itemName,
+        price: price
       });
-    });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(itemName + " telah ditambah ke dalam cart ✔️");
+    }
   </script>
+
 </body>
 </html>
