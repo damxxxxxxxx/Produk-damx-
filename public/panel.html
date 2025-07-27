@@ -2,108 +2,115 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Panel Data - DAMX STORE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PANEL BY DAMX</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #f0f0f0;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #fff;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #161b22;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     h1 {
       text-align: center;
-      color: #00ffe1;
+      margin: 30px 0;
+      color: #00ffe5;
     }
 
-    .product {
-      background-color: #21262d;
-      border-left: 5px solid #00ffe1;
-      margin-bottom: 15px;
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .panel {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid #00ffe5;
+      border-radius: 15px;
       padding: 15px;
-      border-radius: 6px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px #00ffe5;
     }
 
-    .product h3 {
+    .panel h3 {
       margin: 0 0 10px;
-      color: #00ffe1;
+      color: #00d9ff;
     }
 
-    .product p {
-      margin: 4px 0;
+    .price-select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #00ffe5;
     }
 
-    .add-to-cart {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #00ffe1;
-      color: #0d1117;
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00ffe5;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      color: #000;
       font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .add-to-cart:hover {
-      background-color: #00c2b2;
+      border-radius: 10px;
+      cursor: pointer;
     }
 
     .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: #00ffe1;
-      color: #0d1117;
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: #222;
+      color: #00ffe5;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 0 10px #00ffe1;
-    }
-
-    .btn-container {
-      text-align: center;
+      border: 1px solid #00ffe5;
     }
   </style>
 </head>
 <body>
+
+  <h1>PANEL BY DAMX</h1>
   <div class="container">
-    <h1>📦 PANEL DATA (Sebulan)</h1>
 
-    <div class="product"><h3>📶 1GB</h3><p>RM 0.50</p><button class="add-to-cart" onclick="addToCart('Panel 1GB - RM0.50')">Add to Cart</button></div>
-    <div class="product"><h3>📶 5GB</h3><p>RM 1.00</p><button class="add-to-cart" onclick="addToCart('Panel 5GB - RM1.00')">Add to Cart</button></div>
-    <div class="product"><h3>📶 7GB</h3><p>RM 1.50</p><button class="add-to-cart" onclick="addToCart('Panel 7GB - RM1.50')">Add to Cart</button></div>
-    <div class="product"><h3>📶 8GB</h3><p>RM 1.60</p><button class="add-to-cart" onclick="addToCart('Panel 8GB - RM1.60')">Add to Cart</button></div>
-    <div class="product"><h3>📶 9GB</h3><p>RM 1.80</p><button class="add-to-cart" onclick="addToCart('Panel 9GB - RM1.80')">Add to Cart</button></div>
-    <div class="product"><h3>📶 10GB</h3><p>RM 2.00</p><button class="add-to-cart" onclick="addToCart('Panel 10GB - RM2.00')">Add to Cart</button></div>
-    <div class="product"><h3>🚀 UNLI</h3><p>RM 2.50</p><button class="add-to-cart" onclick="addToCart('Panel UNLI - RM2.50')">Add to Cart</button></div>
-
-    <div class="product"><h3>👤 RESSELER PANEL</h3><p>RM 5.00</p><button class="add-to-cart" onclick="addToCart('RESSELER PANEL - RM5.00')">Add to Cart</button></div>
-    <div class="product"><h3>🛡️ ADMIN PANEL</h3><p>RM 6.00</p><button class="add-to-cart" onclick="addToCart('ADMIN PANEL - RM6.00')">Add to Cart</button></div>
-
-    <div class="btn-container">
-      <a href="produk.html" class="back-btn">⬅ Kembali ke Produk</a>
+    <div class="panel">
+      <h3>📦 HARGA PANEL DATA TERKINI (SEBULAN)</h3>
+      <select class="price-select" id="panelPrice">
+        <option value="0.50">1GB — RM 0.50</option>
+        <option value="1.00">5GB — RM 1.00</option>
+        <option value="1.50">7GB — RM 1.50</option>
+        <option value="1.60">8GB — RM 1.60</option>
+        <option value="1.80">9GB — RM 1.80</option>
+        <option value="2.00">10GB — RM 2.00</option>
+        <option value="2.50">UNLI — RM 2.50</option>
+        <option value="5.00">RESSELER PANEL — RM 5.00</option>
+        <option value="6.00">ADMIN PANEL — RM 6.00</option>
+      </select>
+      <button onclick="addToCart()">Add to Cart</button>
     </div>
+
+    <a class="back-btn" href="index.html">⬅ Kembali</a>
   </div>
 
   <script>
-    function addToCart(item) {
-      alert("✅ " + item + " telah dimasukkan ke dalam cart!");
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push(item);
-      localStorage.setItem('cart', JSON.stringify(cart));
+    function addToCart() {
+      const price = document.getElementById("panelPrice").value;
+      alert("Item dimasukkan ke dalam cart.\nHarga dipilih: RM " + price);
+      // Tambah logik cart jika ada sistem checkout nanti
     }
   </script>
+
 </body>
 </html>
