@@ -153,7 +153,15 @@
     }
 
     loadCart();
-  </script>
+ <button onclick="goToPayment()">🧾 Terus ke Pembayaran</button>
+
+<script>
+function goToPayment() {
+  const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+  localStorage.setItem("paymentCart", JSON.stringify(cart));
+  window.location.href = "https://payment-damxstore.vercel.app";
+}
+</script>
 
 </body>
 </html>
