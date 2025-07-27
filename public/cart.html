@@ -116,6 +116,9 @@
 
   <div class="footer">From DAMX STORE</div>
 
+  <!-- Butang copy item -->
+<button class="btn" onclick="copyCartItems()">📋 Salin Senarai Item</button>
+ 
   <script>
     function loadCart() {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -156,6 +159,26 @@
       loadCart();
     }
 
+    function copyCartItems() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cart.length === 0) {
+    alert("Cart masih kosong.");
+    return;
+  }
+
+  let text = "";
+  let total = 0;
+  cart.forEach(item => {
+    text += `🛍️ ${item.item} (RM${item.price})\n`;
+    total += parseFloat(item.price);
+  });
+  text += `\n💰 Total: RM${total.toFixed(2)}`;
+
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Senarai item berjaya disalin ke clipboard!");
+  });
+    }
+    
     // Fungsi ke halaman payment
     function goToPayment() {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
