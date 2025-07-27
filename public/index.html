@@ -106,7 +106,33 @@
     <button onclick="window.location.href='murban.html'">MURBAN 777</button>
   </section>
 
-  <button class="cart-button" onclick="window.location.href='cart.html'">🛒 Cek Cart</button>
+<script>
+  let cart = [];
+
+  function addToCart(product, price) {
+    cart.push({ product, price });
+    alert(product + ' ditambah ke cart!');
+  }
+
+  function openCart() {
+    const list = document.getElementById('cartList');
+    const total = document.getElementById('totalPrice');
+    list.innerHTML = '';
+    let sum = 0;
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.product} - RM${item.price}`;
+      list.appendChild(li);
+      sum += item.price;
+    });
+    total.textContent = sum;
+    document.getElementById('cartModal').style.display = 'block';
+  }
+
+  function closeCart() {
+    document.getElementById('cartModal').style.display = 'none';
+  }
+</script>
 
 </body>
 </html>
