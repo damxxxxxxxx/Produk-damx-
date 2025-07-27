@@ -1,86 +1,139 @@
 <!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Script WhatsApp - DAMX STORE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Script Bug WhatsApp - DAMX STORE</title>
   <style>
     body {
-      background-color: #0d0d0d;
-      color: white;
-      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
       padding: 20px;
     }
-    h2 {
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
       color: #00ffff;
-      border-bottom: 2px solid #00ffff;
-      padding-bottom: 5px;
     }
-    .item {
-      background-color: #1a1a1a;
-      padding: 10px;
-      margin: 10px 0;
+    .product {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      margin-bottom: 15px;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
     }
-    .price {
+    .product h3 {
+      margin: 0 0 10px 0;
       color: #00ffcc;
     }
-    button {
-      margin-top: 5px;
-      padding: 5px 10px;
+    .product ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 10px 0;
+    }
+    .product ul li {
+      margin-bottom: 5px;
+    }
+    .btn {
       background-color: #00ffff;
-      color: #000;
       border: none;
+      color: #000;
+      padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
+    .btn:hover {
       background-color: #00cccc;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h2>📜 LIST SCRIPT WHATSAPP VIA WA</h2>  <div class="item">
-    👑 <b>AMBA CRASH</b><br>
-    <span class="price">ENC: RM7</span><br><button>Add to Cart</button><br>
-    <span class="price">NO ENC: RM10</span><br><button>Add to Cart</button><br>
-    <span class="price">RESSELER: RM15</span><br><button>Add to Cart</button>
-  </div>  <div class="item">
-    👺 <b>PSYCHO CRASH</b><br>
-    <span class="price">NO ENC: RM10</span><br><button>Add to Cart</button><br>
-    <span class="price">RESSELER: RM15</span><br><button>Add to Cart</button>
-  </div>  <div class="item">
-    ⚡ <b>NEXSUS</b><br>
-    <span class="price">NO UP: RM7</span><br><button>Add to Cart</button><br>
-    <span class="price">FULL UP: RM10</span><br><button>Add to Cart</button>
-  </div>  <div class="item">
-    🌪️ <b>VORTEX</b><br>
-    <span class="price">NO UP: RM5</span><br><button>Add to Cart</button><br>
-    <span class="price">FULL UP: RM10</span><br><button>Add to Cart</button>
-  </div>  <h2>📜 LIST SCRIPT WHATSAPP VIA TELEGRAM</h2>  <div class="item">
-    🀄 <b>MAHJONG</b><br>
-    <span class="price">NO UP: RM10</span><br><button>Add to Cart</button><br>
-    <span class="price">UPDATE 3X: RM14</span><br><button>Add to Cart</button><br>
-    <span class="price">PERMANENT: RM20</span><br><button>Add to Cart</button>
-  </div>  <div class="item">
-    🍥 <b>CIKIWIR</b><br>
-    <span class="price">NO UP: RM7</span><br><button>Add to Cart</button><br>
-    <span class="price">FULL UP: RM12</span><br><button>Add to Cart</button>
-  </div>  <div class="item">
-    💠 <b>TREDICT</b><br>
-    <span class="price">FULL UP: RM30</span><br><button>Add to Cart</button><br>
-    <span class="price">RESSELER: RM40</span><br><button>Add to Cart</button>
-  </div>  <div class="item">
-    ⚡ <b>ZEUS</b><br>
-    <span class="price">NO UP: RM11</span><br><button>Add to Cart</button><br>
-    <span class="price">UPDATE 3X: RM15</span><br><button>Add to Cart</button><br>
-    <span class="price">PERMANENT: RM25</span><br><button>Add to Cart</button>
-  </div>  <div class="item">
-    🐉 <b>DRAGON</b><br>
-    <span class="price">NO UP: RM4</span><br><button>Add to Cart</button><br>
-    <span class="price">UPDATE 5X: RM6</span><br><button>Add to Cart</button><br>
-    <span class="price">UPDATE 7X: RM7</span><br><button>Add to Cart</button><br>
-    <span class="price">PERMANENT: RM10</span><br><button>Add to Cart</button><br>
-    <span class="price">RESSELER: RM15</span><br><button>Add to Cart</button>
-  </div>
-</body>
+  <h1>📜 LIST SCRIPT WHATSAPP VIA WA</h1>  <div class="product">
+    <h3>👑 AMBA CRASH</h3>
+    <ul>
+      <li>ENC : RM7</li>
+      <li>NO ENC : RM10</li>
+      <li>RESSELER : RM15</li>
+    </ul>
+    <button class="btn" onclick="addToCart('AMBA CRASH')">Add to Cart</button>
+  </div>  <div class="product">
+    <h3>👺 PSYCHO CRASH</h3>
+    <ul>
+      <li>NO ENC : RM10</li>
+      <li>RESSELER : RM15</li>
+    </ul>
+    <button class="btn" onclick="addToCart('PSYCHO CRASH')">Add to Cart</button>
+  </div>  <div class="product">
+    <h3>⚡ NEXSUS</h3>
+    <ul>
+      <li>NO UP : RM7</li>
+      <li>FULL UP : RM10</li>
+    </ul>
+    <button class="btn" onclick="addToCart('NEXSUS')">Add to Cart</button>
+  </div>  <div class="product">
+    <h3>🌪️ VORTEX</h3>
+    <ul>
+      <li>NO UP : RM5</li>
+      <li>FULL UP : RM10</li>
+    </ul>
+    <button class="btn" onclick="addToCart('VORTEX')">Add to Cart</button>
+  </div>  <h1>📜 LIST SCRIPT WHATSAPP VIA TELEGRAM</h1>  <div class="product">
+    <h3>🀄 MAHJONG</h3>
+    <ul>
+      <li>NO UP : RM10</li>
+      <li>UPDATE 3X : RM14</li>
+      <li>PERMANENT : RM20</li>
+    </ul>
+    <button class="btn" onclick="addToCart('MAHJONG')">Add to Cart</button>
+  </div>  <div class="product">
+    <h3>🍥 CIKIWIR</h3>
+    <ul>
+      <li>NO UP : RM7</li>
+      <li>FULL UP : RM12</li>
+    </ul>
+    <button class="btn" onclick="addToCart('CIKIWIR')">Add to Cart</button>
+  </div>  <div class="product">
+    <h3>💠 TREDICT</h3>
+    <ul>
+      <li>FULL UP : RM30</li>
+      <li>RESSELER : RM40</li>
+    </ul>
+    <button class="btn" onclick="addToCart('TREDICT')">Add to Cart</button>
+  </div>  <div class="product">
+    <h3>⚡ ZEUS</h3>
+    <ul>
+      <li>NO UP : RM11</li>
+      <li>UPDATE 3X : RM15</li>
+      <li>PERMANENT : RM25</li>
+    </ul>
+    <button class="btn" onclick="addToCart('ZEUS')">Add to Cart</button>
+  </div>  <div class="product">
+    <h3>🐉 DRAGON</h3>
+    <ul>
+      <li>NO UP : RM4</li>
+      <li>UPDATE 5X : RM6</li>
+      <li>UPDATE 7X : RM7</li>
+      <li>PERMANENT : RM10</li>
+      <li>RESSELER : RM15</li>
+    </ul>
+    <button class="btn" onclick="addToCart('DRAGON')">Add to Cart</button>
+  </div><a href="index.html" class="back">⬅ Kembali ke Halaman Utama</a>
+
+  <script>
+    function addToCart(itemName) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(itemName);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(itemName + ' telah dimasukkan ke dalam cart!');
+    }
+  </script></body>
 </html>
