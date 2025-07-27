@@ -8,6 +8,10 @@
   <ul id="cart-list"></ul>
   <p><strong>Total Harga: RM <span id="total-price">0</span></strong></p>
 
+  <button onclick="clearCart()">🗑 Kosongkan Cart</button>
+  <br><br>
+  <a href="index.html">⬅️ Kembali ke Halaman Utama</a>
+
   <script>
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let total = 0;
@@ -23,6 +27,12 @@
     });
 
     totalPriceEl.textContent = total.toFixed(2);
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      alert("Cart telah dikosongkan!");
+      location.reload();
+    }
   </script>
 </body>
 </html>
