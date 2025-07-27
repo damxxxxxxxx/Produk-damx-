@@ -10,10 +10,11 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: white;
-      padding: 20px;
-      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
       position: relative;
-      z-index: 1;
     }
     #bgVideo {
       position: fixed;
@@ -27,7 +28,7 @@
     }
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-top: 30px;
     }
     header img {
       width: 100px;
@@ -44,12 +45,22 @@
       color: #00ffff;
       text-shadow: 0 0 10px #00ffff;
     }
+
+    /* Butang Container - Tengah */
     .buttons {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       gap: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 400px;
     }
+
     .buttons button {
       background: transparent;
       border: 2px solid #00ffff;
@@ -59,8 +70,7 @@
       border-radius: 10px;
       cursor: pointer;
       transition: 0.3s ease;
-      width: 90%;
-      max-width: 400px;
+      width: 100%;
       box-shadow: 0 0 10px #00ffff80;
     }
     .buttons button:hover {
@@ -68,6 +78,13 @@
       color: #000;
       box-shadow: 0 0 20px #00ffffcc;
     }
+
+    .buttons .cart {
+      background-color:#00ff88;
+      color:#000;
+      border: 2px solid #00ff88;
+    }
+
     /* Text berjalan bawah */
     .marquee {
       position: fixed;
@@ -103,9 +120,7 @@
     <button onclick="window.location.href='bug.html'">SCRIPT BUG WHATSAPP</button>
     <button onclick="window.location.href='panel.html'">PANEL BY DAMX</button>
     <button onclick="window.location.href='murban.html'">MURBAN 777</button>
-    <button onclick="window.location.href='cart.html'" style="background-color:#00ff88; color:#000; border: 2px solid #00ff88;">
-      🛒 Cek Cart Anda
-    </button>
+    <button onclick="window.location.href='cart.html'" class="cart">🛒 Cek Cart Anda</button>
   </div>
 
   <!-- TEXT BERJALAN -->
