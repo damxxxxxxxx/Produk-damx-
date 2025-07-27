@@ -197,5 +197,36 @@
 
     <div class="credit">From DAMX STORE</div>
   </div>
+
+  <script>
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const product = button.closest(".product");
+        const item = product.querySelector("h2").innerText;
+        const select = product.querySelector("select");
+        const selected = select.options[select.selectedIndex];
+
+        if (select.selectedIndex === 0) {
+          alert("Sila pilih harga dahulu.");
+          return;
+        }
+
+        const valueText = selected.textContent;
+        const price = valueText.split("RM")[1];
+
+        const cartItem = {
+          item: item + " - " + valueText.split(" - ")[0],
+          price: price
+        };
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(cartItem);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Item berjaya dimasukkan ke dalam cart!");
+      });
+    });
+  </script>
 </body>
 </html>
