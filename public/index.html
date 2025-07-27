@@ -9,47 +9,47 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(ellipse at bottom, #000428 0%, #004e92 100%);
-      background-size: 400% 400%;
-      animation: moveBg 20s ease infinite;
       color: white;
       padding: 20px;
       min-height: 100vh;
-      overflow-x: hidden;
+      position: relative;
+      z-index: 1;
     }
-
-    @keyframes moveBg {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -10;
+      filter: brightness(0.4) blur(2px);
     }
-
     header {
       text-align: center;
       margin-bottom: 30px;
-      position: relative;
     }
-
     header img {
       width: 100px;
       border-radius: 50%;
-      box-shadow: 0 0 15px cyan;
+      box-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff,
+        0 0 40px #00ffff;
     }
-
     h1 {
       margin-top: 10px;
       font-size: 28px;
       color: #00ffff;
       text-shadow: 0 0 10px #00ffff;
     }
-
     .buttons {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
     }
-
     .buttons button {
       background: transparent;
       border: 2px solid #00ffff;
@@ -63,83 +63,36 @@
       max-width: 400px;
       box-shadow: 0 0 10px #00ffff80;
     }
-
     .buttons button:hover {
       background: #00ffff;
       color: #000;
       box-shadow: 0 0 20px #00ffffcc;
     }
-
-    /* Efek bintang jatuh */
-    .stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      animation: starFall 3s linear infinite;
-    }
-
-    @keyframes starFall {
-      0% { transform: translateY(0) translateX(0); opacity: 1; }
-      100% { transform: translateY(100vh) translateX(50px); opacity: 0; }
-    }
-
-    /* Marquee bawah */
+    /* Text berjalan bawah */
     .marquee {
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 0;
+      background: rgba(0, 0, 0, 0.4);
+      color: #00ffff;
+      font-weight: bold;
+      padding: 8px 0;
       text-align: center;
-      color: cyan;
       font-size: 16px;
-      font-weight: bold;
-      z-index: 10;
+      animation: marquee 20s linear infinite;
     }
-
-    /* Butang audio */
-    #audioControl {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #00ffff;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 10px #00ffffaa;
-    }
-
-    #audioControl:hover {
-      box-shadow: 0 0 20px #00ffffcc;
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Muzik -->
-  <audio id="bgMusic" autoplay loop>
-    <source src="https://files.catbox.moe/h2zy2x.mp3" type="audio/mpeg">
-  </audio>
-  <button id="audioControl">⏸️</button>
-
-  <!-- Efek bintang -->
-  <div class="stars" id="stars"></div>
+  <!-- VIDEO BACKGROUND -->
+  <video autoplay loop muted playsinline id="bgVideo">
+    <source src="https://files.catbox.moe/4spq8s.mp4" type="video/mp4">
+  </video>
 
   <header>
     <img src="https://files.catbox.moe/b5pfw2.jpg" alt="Logo DAMX STORE">
@@ -147,50 +100,18 @@
   </header>
 
   <div class="buttons">
-    <button onclick="notify('SCRIPT BUG WHATSAPP'); window.location.href='bug.html'">SCRIPT BUG WHATSAPP</button>
-    <button onclick="notify('PANEL BY DAMX'); window.location.href='panel.html'">PANEL BY DAMX</button>
-    <button onclick="notify('MURBAN 777'); window.location.href='murban.html'">MURBAN 777</button>
-    <button onclick="notify('CEK CART'); window.location.href='cart.html'" style="background-color:#00ff88; color:#000; border: 2px solid #00ff88;">
+    <button onclick="window.location.href='bug.html'">SCRIPT BUG WHATSAPP</button>
+    <button onclick="window.location.href='panel.html'">PANEL BY DAMX</button>
+    <button onclick="window.location.href='murban.html'">MURBAN 777</button>
+    <button onclick="window.location.href='cart.html'" style="background-color:#00ff88; color:#000; border: 2px solid #00ff88;">
       🛒 Cek Cart Anda
     </button>
   </div>
 
-  <!-- Text berjalan -->
+  <!-- TEXT BERJALAN -->
   <div class="marquee">
-    🌌 Selamat datang ke DAMX STORE — Nikmati pengalaman galaksi & belian terbaik! 🚀
+    💠 Selamat datang ke DAMX STORE | Semua produk dijamin trusted 💠
   </div>
 
-  <script>
-    // Bintang jatuh generate
-    const stars = document.getElementById("stars");
-    for(let i=0; i<50; i++) {
-      let star = document.createElement("div");
-      star.className = "star";
-      star.style.top = Math.random() * 100 + "%";
-      star.style.left = Math.random() * 100 + "%";
-      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-      stars.appendChild(star);
-    }
-
-    // Audio control
-    const bgMusic = document.getElementById("bgMusic");
-    const audioControl = document.getElementById("audioControl");
-    let playing = true;
-    audioControl.onclick = function () {
-      if (playing) {
-        bgMusic.pause();
-        audioControl.innerText = "▶️";
-      } else {
-        bgMusic.play();
-        audioControl.innerText = "⏸️";
-      }
-      playing = !playing;
-    };
-
-    // Notifikasi bila tekan
-    function notify(item) {
-      alert("Anda memilih: " + item + " 💫");
-    }
-  </script>
 </body>
 </html>
