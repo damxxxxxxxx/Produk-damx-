@@ -6,74 +6,68 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #f0f0f0;
-    }header {
-  background-color: #161b22;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(255, 0, 255, 0.2);
-}
-
-header img {
-  height: 60px;
-}
-
-header h1 {
-  margin: 10px 0 0;
-  color: #ff00ff;
-  font-size: 28px;
-}
-
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 40px 20px;
-}
-
-.menu a {
-  display: inline-block;
-  padding: 15px 25px;
-  background-color: #ff00ff;
-  color: #0d1117;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ff00ff;
-  transition: 0.3s;
-}
-
-.menu a:hover {
-  background-color: #d100d1;
-}
-
-footer {
-  margin-top: 40px;
-  text-align: center;
-  padding: 20px;
-  background: #161b22;
-  font-size: 14px;
-  color: #999;
-}
-
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      background: #111;
+      box-shadow: 0 0 10px #0ff;
+    }
+    header img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #0ff;
+    }
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .btn {
+      background: #0ff;
+      color: #000;
+      padding: 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #0ff;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #00e6e6;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      font-size: 14px;
+      color: #777;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://files.catbox.moe/b5pfw2.jpg" alt="DAMX Logo">
+    <img src="https://files.catbox.moe/b5pfw2.jpg" alt="Logo DAMX">
     <h1>DAMX STORE</h1>
-  </header>  <section class="menu">
-    <a href="produk.html">🛒 Produk</a>
-    <a href="qr.html">📸 QR TnG & DuitNow</a>
-    <a href="murban.html">📦 MURBAN 777</a>
-    <a href="panel.html">📶 Panel Data</a>
-    <a href="bugwa.html">👾 Bug WhatsApp</a>
-    <a href="checkout.html">💳 Checkout</a>
-  </section>  <footer>
-    From DAMX STORE • Semua Hak Milik Terpelihara • 2025
+  </header>  <div class="button-container">
+    <a href="produk.html" class="btn">🛒 Produk</a>
+    <a href="qr.html" class="btn">📷 QR Payment</a>
+    <a href="murban.html" class="btn">💀 MURBAN 777</a>
+    <a href="panel.html" class="btn">📦 Panel Data</a>
+    <a href="bug-whatsapp.html" class="btn">💣 Script Bug WhatsApp</a>
+    <a href="checkout.html" class="btn">💳 Checkout</a>
+  </div>  <footer>
+    From DAMX STORE
   </footer>
 </body>
 </html>
